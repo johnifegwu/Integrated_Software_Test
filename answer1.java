@@ -15,7 +15,7 @@ public class answer1 {
 
         for(int i = 0; i < N.length; i++){
             while(0 < N[i] && N[i] - 1 < N.length && N[i] != i+1 && N[i] != N[ N[i] - 1]){
-                N = swap(i, N[i] - 1, N);
+                swap(i, N[i] - 1, N);
             }
         }
 
@@ -28,11 +28,10 @@ public class answer1 {
         return N.length + 1;
     } 
 
-    public static int[] swap(int i, int j, int[] N) {
+    public static void swap(int i, int j, int[] N) {
         int temp = N[i];
         N[i] = N[j];
         N[j] = temp;
-        return N;
     }
     
 }
